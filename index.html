@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihongo Learn - Modern Japanese App</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,500,0,0"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <span class="material-symbols-rounded" style="font-size: 32px; vertical-align: bottom; margin-right: 6px;">auto_stories</span>Nihongo Learn
+        </h1>
+        <nav>
+            <button class="nav-btn active" data-target="hiragana-view">
+                <span class="material-symbols-rounded">translate</span> Hiragana
+            </button>
+            <button class="nav-btn" data-target="katakana-view">
+                <span class="material-symbols-rounded">text_fields</span> Katakana
+            </button>
+            <button class="nav-btn" data-target="vocab-view">
+                <span class="material-symbols-rounded">school</span> Vocabulary
+            </button>
+            <button class="nav-btn" data-target="add-view">
+                <span class="material-symbols-rounded">add_circle</span> Add Words
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hiragana-view" class="view active">
+            <div class="controls box">
+                <h3>Select Hiragana Rows</h3>
+                <div class="checkbox-group" id="hiragana-checkboxes">
+                    <label class="pill-checkbox"><input type="checkbox" value="a" checked><span class="pill-label">あ・a</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ka"><span class="pill-label">か・ka</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="sa"><span class="pill-label">さ・sa</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ta"><span class="pill-label">た・ta</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="na"><span class="pill-label">な・na</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ha"><span class="pill-label">は・ha</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ma"><span class="pill-label">ま・ma</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ya"><span class="pill-label">や・ya</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ra"><span class="pill-label">ら・ra</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="wa"><span class="pill-label">わ・wa</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="n"><span class="pill-label">ん・n</span></label>
+                </div>
+                <div class="action-buttons">
+                    <button id="btn-select-all-hira" class="btn-secondary">Select All</button>
+                    <button id="btn-next-hira" class="btn-primary">Next Card</button>
+                </div>
+            </div>
+            <div class="flashcard-container">
+                <div class="card" id="hiragana-card">
+                    <div class="card__face card__face--front">
+                        <h2 class="kana-char" id="hira-front">-</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <h2 class="kana-romaji" id="hira-back">-</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="katakana-view" class="view">
+            <div class="controls box">
+                <h3>Select Katakana Rows</h3>
+                <div class="checkbox-group" id="katakana-checkboxes">
+                    <label class="pill-checkbox"><input type="checkbox" value="a" checked><span class="pill-label">ア・a</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ka"><span class="pill-label">カ・ka</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="sa"><span class="pill-label">サ・sa</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ta"><span class="pill-label">タ・ta</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="na"><span class="pill-label">ナ・na</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ha"><span class="pill-label">ハ・ha</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ma"><span class="pill-label">マ・ma</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ya"><span class="pill-label">ヤ・ya</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="ra"><span class="pill-label">ラ・ra</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="wa"><span class="pill-label">ワ・wa</span></label>
+                    <label class="pill-checkbox"><input type="checkbox" value="n"><span class="pill-label">ン・n</span></label>
+                </div>
+                <div class="action-buttons">
+                    <button id="btn-select-all-kata" class="btn-secondary">Select All</button>
+                    <button id="btn-next-kata" class="btn-primary">Next Card</button>
+                </div>
+            </div>
+            <div class="flashcard-container">
+                <div class="card" id="katakana-card">
+                    <div class="card__face card__face--front">
+                        <h2 class="kana-char" id="kata-front">-</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <h2 class="kana-romaji" id="kata-back">-</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vocab-view" class="view">
+            <div class="controls box">
+                <h3>Select JLPT Level</h3>
+                <div class="custom-select-container">
+                    <div class="custom-select" id="custom-jlpt">
+                        <span id="selected-jlpt">All Levels</span>
+                        <span class="material-symbols-rounded">expand_more</span>
+                    </div>
+                    <div class="custom-options" id="options-jlpt">
+                        <div class="custom-option active" data-value="all">All Levels</div>
+                        <div class="custom-option" data-value="N5">N5</div>
+                        <div class="custom-option" data-value="N4">N4</div>
+                        <div class="custom-option" data-value="N3">N3</div>
+                        <div class="custom-option" data-value="N2">N2</div>
+                        <div class="custom-option" data-value="N1">N1</div>
+                    </div>
+                    <input type="hidden" id="jlpt-level" value="all">
+                </div>
+                <button id="btn-next-vocab" class="btn-primary">Next Card</button>
+            </div>
+            <div class="flashcard-container">
+                <div class="card" id="vocab-card">
+                    <div class="card__face card__face--front">
+                        <h2 id="vocab-kanji">-</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <p class="reading" id="vocab-hiragana">-</p>
+                        <p class="romaji" id="vocab-romaji">-</p>
+                        <h3 class="meaning" id="vocab-meaning">-</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="add-view" class="view">
+            <div class="box">
+                <h3>Add New Word</h3>
+                <form id="add-word-form">
+                    <div class="custom-select-container">
+                        <div class="custom-select" id="custom-new">
+                            <span id="selected-new">N5</span>
+                            <span class="material-symbols-rounded">expand_more</span>
+                        </div>
+                        <div class="custom-options" id="options-new">
+                            <div class="custom-option active" data-value="N5">N5</div>
+                            <div class="custom-option" data-value="N4">N4</div>
+                            <div class="custom-option" data-value="N3">N3</div>
+                            <div class="custom-option" data-value="N2">N2</div>
+                            <div class="custom-option" data-value="N1">N1</div>
+                        </div>
+                        <input type="hidden" id="new-level" value="N5">
+                    </div>
+                    <input type="text" id="new-kanji" placeholder="Kanji/Kana (e.g., 水)" required>
+                    <input type="text" id="new-hiragana" placeholder="Reading (e.g., みず)" required>
+                    <input type="text" id="new-romaji" placeholder="Romaji (e.g., mizu)" required>
+                    <input type="text" id="new-meaning" placeholder="Vietnamese Meaning" required>
+                    <button type="submit" class="btn-primary">Save Word</button>
+                </form>
+            </div>
+
+            <div class="box" style="margin-top: 20px;">
+                <h3>Bulk Import (CSV)</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 20px;">Format: Level, Kanji, Hiragana, Romaji, Meaning</p>
+                
+                <div class="custom-file-upload">
+                    <label for="csv-upload" class="custom-btn btn-secondary" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;">
+                        <span class="material-symbols-rounded">upload_file</span> Choose CSV File
+                    </label>
+                    <input type="file" id="csv-upload" accept=".csv" style="display: none;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+
+</html>
