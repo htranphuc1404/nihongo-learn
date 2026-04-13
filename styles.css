@@ -319,11 +319,18 @@ input[type="text"]:focus {
 }
 
 /* Typography inside cards */
-.kana-char,
-#vocab-kanji {
+.kana-char {
     font-size: 100px;
     font-weight: 800;
     color: var(--text);
+}
+
+#vocab-kanji {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    font-size: clamp(36px, 12vw, 80px);
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.2;
 }
 
 .kana-romaji {
