@@ -49,7 +49,15 @@ header h1 {
     color: var(--primary);
 }
 
-nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; padding: 0 10px; max-width: 600px; margin: 0 auto; }
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
 .nav-btn {
     display: inline-flex;
@@ -161,14 +169,14 @@ main {
     user-select: none;
 }
 
-.pill-checkbox input:checked + .pill-label {
+.pill-checkbox input:checked+.pill-label {
     background: var(--primary) !important;
     color: #ffffff !important;
     border-color: var(--primary) !important;
     box-shadow: 0 4px 10px rgba(94, 92, 230, 0.3);
 }
 
-.pill-checkbox input:not(:checked):hover + .pill-label {
+.pill-checkbox input:not(:checked):hover+.pill-label {
     background: rgba(94, 92, 230, 0.15);
     color: var(--primary);
     border-color: rgba(94, 92, 230, 0.3);
@@ -179,10 +187,17 @@ main {
     gap: 10px;
 }
 
-button, .custom-btn {
-    padding: 12px 18px; border: none; border-radius: 12px; cursor: pointer;
+button,
+.custom-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
     font-family: 'Outfit', sans-serif;
-    font-weight: 500; font-size: 15px; transition: all 0.2s; flex: 1;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.2s;
+    flex: 1;
 }
 
 .btn-primary {
@@ -208,10 +223,14 @@ button, .custom-btn {
 }
 
 input[type="text"] {
-    width: 100%; padding: 14px; margin-bottom: 15px; 
-    background: rgba(255,255,255,0.7);
-    border: 1px solid rgba(0,0,0,0.05);
-    border-radius: 12px; font-family: inherit; font-size: 15px;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
     transition: all 0.2s;
     outline: none;
 }
@@ -228,49 +247,144 @@ input[type="text"]:focus {
     width: 100%;
     margin-bottom: 15px;
 }
+
 .custom-select {
-    display: flex; justify-content: space-between; align-items: center;
-    width: 100%; padding: 14px 18px; 
-    background: rgba(255,255,255,0.7);
-    border: 1px solid rgba(0,0,0,0.05);
-    border-radius: 12px; font-family: inherit; font-size: 15px; font-weight: 500;
-    cursor: pointer; transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
     user-select: none;
 }
-.custom-select:hover { background: #FFF; border-color: rgba(94, 92, 230, 0.3); }
-.custom-options {
-    position: absolute; top: calc(100% + 5px); left: 0; width: 100%;
-    background: rgba(255,255,255,0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-    border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-    z-index: 50; display: none; overflow: hidden; flex-direction: column;
-}
-.custom-options.show { display: flex; animation: slideDown 0.2s ease; }
-.custom-option {
-    padding: 14px 18px; cursor: pointer; font-size: 15px; transition: 0.2s; font-weight: 500;
-}
-.custom-option:not(:last-child) { border-bottom: 1px solid rgba(0,0,0,0.03); }
-.custom-option:hover { background: rgba(94, 92, 230, 0.1); color: var(--primary); }
-.custom-option.active { background: var(--primary); color: white; }
 
-@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.custom-select:hover {
+    background: #FFF;
+    border-color: rgba(94, 92, 230, 0.3);
+}
+
+.custom-options {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    z-index: 50;
+    display: none;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.custom-options.show {
+    display: flex;
+    animation: slideDown 0.2s ease;
+}
+
+.custom-option {
+    padding: 14px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.custom-option:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.custom-option:hover {
+    background: rgba(94, 92, 230, 0.1);
+    color: var(--primary);
+}
+
+.custom-option.active {
+    background: var(--primary);
+    color: white;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Toast Notification */
 #toast-container {
-    position: fixed; bottom: 20px; right: 20px; z-index: 1000;
-    display: flex; flex-direction: column; gap: 10px; pointer-events: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
 }
+
 .toast {
-    background: var(--surface-glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    padding: 14px 20px; border-radius: 12px; display: flex; align-items: center; gap: 10px;
-    font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 15px; color: var(--text);
+    background: var(--surface-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text);
     animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
 }
-.toast.success .material-symbols-rounded { color: #34C759; }
-.toast.error .material-symbols-rounded { color: #FF3B30; }
 
-@keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+.toast.success .material-symbols-rounded {
+    color: #34C759;
+}
+
+.toast.error .material-symbols-rounded {
+    color: #FF3B30;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
 
 /* 3D Flashcard Styles */
 .flashcard-container {
