@@ -46,9 +46,7 @@ header h1 {
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 15px;
-    background: linear-gradient(90deg, #5E5CE6, #FF2D55);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary);
 }
 
 nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; padding: 0 10px; max-width: 600px; margin: 0 auto; }
